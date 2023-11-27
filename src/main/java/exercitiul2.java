@@ -18,10 +18,24 @@ public class exercitiul2 {
         System.out.print(currentLine);
 
     }
+
+    public static void merelapere() throws IOException{
+        BufferedReader reader = new BufferedReader(new FileReader(absolutePath));
+        String currentLine = reader.readLine();
+
+        FileWriter fileWriter = new FileWriter(absolutePath);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+
+        currentLine=currentLine.replace("mere","pere");
+        printWriter.print(currentLine);
+        reader.close();
+        printWriter.close();
+
+    }
     public static void main(String[] args) throws IOException {
 
         scriere("Ana are mere");
         citire();
-        scriere("Ana are pere");
+        merelapere();
     }
 }
